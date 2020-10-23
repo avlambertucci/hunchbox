@@ -1,22 +1,15 @@
 .header_container{
-  background-color: rgb(224, 224, 224);
   
+  background: radial-gradient(circle, rgba(246,242,231,1) 0%, rgba(172,172,172,1) 100%);
+  -webkit-box-shadow: 0px 10px 21px -1px rgba(0,0,0,0.38);
+  -moz-box-shadow: 0px 10px 21px -1px rgba(0,0,0,0.38);
+  box-shadow: 0px 10px 21px -1px rgba(0,0,0,0.38);
+
 }
-.header_container_top{
-  
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-.img{
-  max-width: 180px;
-}
+
+
 .header_links{
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  padding: 20px;
+  background: rgb(246,242,231);
+  padding: 0 10px 10px 0;
   
 }
