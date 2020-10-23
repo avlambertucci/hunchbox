@@ -1,0 +1,22 @@
+.header_container{
+  background-color: rgb(224, 224, 224);
+  
+}
+.header_container_top{
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.img{
+  max-width: 180px;
+}
+.header_links{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 20px;
+  
+}
