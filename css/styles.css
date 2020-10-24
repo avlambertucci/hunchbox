@@ -3,3 +3,7 @@
 @import "tailwindcss/components";
 
 @import "tailwindcss/utilities";
+
+body, p, h1, h2, h, a{
+  font-family: 'Roboto', sans-serif;
+}

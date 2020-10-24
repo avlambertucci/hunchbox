@@ -1,19 +1,16 @@
 import React from 'react';
-
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 import '../css/styles.css'
-// import logo from '../public/logo_transparent.png'
-
+import Layout from '../components/Layout';
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet"></link>
 
 function MyApp({Component, pageProps}){
+  console.log(pageProps)
   return(
     <div>
-      <Header />
-      
-      <Component {...pageProps}/>
-
-      <Footer />
+      <Layout>
+        <Component {...pageProps}/>
+      </Layout>
+ 
     </div>
   )
 }
