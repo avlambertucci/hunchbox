@@ -1,8 +1,15 @@
 import React from 'react';
 import Link from 'next/link'
+import useSWR from 'swr';
+
+const fetcher = (...args)=> fetch(...args).then(res=> res.json())
+
 
 
 function Index(){
+const{data, error} = useSWR('/api/get-promo', fetcher )
+
+
   return (
     <div className="mt-12 text-center">
       <p>
@@ -17,6 +24,11 @@ function Index(){
             focus:outline-none focus:shadow-outline duration-300 ...'>Give a hunch!</button>
         </Link>
       </div>
+      <p className="my-12 text-center">
+      {!data && <p>Carregando...</p>}
+      {!error && data && data.showCoupon==true && <p>{data.message}</p>}
+        
+      </p>
     </div>
     
   )
