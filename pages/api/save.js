@@ -1,12 +1,16 @@
 import {GoogleSpreadsheet} from 'google-spreadsheet';
-import credentials from '../../credentials.json'
 import moment from 'moment';
-const doc = new GoogleSpreadsheet('10wFaJAFkO8AneyNyDTw527YsT_Rs8kkwrNo72d12hCA')
+const doc = new GoogleSpreadsheet(process.env.SHEET_DOC_ID)
+
+
 
 export default async (req, res)=>{
 
   try{
-    await doc.useServiceAccountAuth(credentials)
+    await doc.useServiceAccountAuth({
+      client_email: process.env.SHEET_CLIENT_EMAIL,
+      private_key: process.env.SHEET_PRIVATE_KEY
+    })
     await doc.loadInfo()
     
     const data = (JSON.parse(req.body));
@@ -35,17 +39,22 @@ export default async (req, res)=>{
       
     }
     
-    const payload = await sheet.addRow({ 
+      await sheet.addRow({ 
       Name: data.Name,
       Email: data.Email,
       Whatsapp: data.Whatsapp,
       Cupom,
       Promo,
       "Fill Date": FillDate,
-      Rate: 5
+      Rate: parseInt(data.Rate)
       
     })
-    res.send(req.body)
+    
+    res.send(JSON.stringify({
+      showCupom: Cupom !== '',
+      Cupom,
+      Promo
+    }))
   }
   catch(err){
     console.log(err)

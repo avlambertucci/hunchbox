@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <div className={styles.footer_container}>  
       <div className="container mx-auto text-center font-bold text-white">
-        <h3>Projecto desenvolvido por: </h3>
+        <h3>Projeto desenvolvido por: </h3>
         <a className="hover:underline" href="">Armando Lambertucci</a> / {''}
         <a className="hover:underline" href="https://www.linkedin.com/in/armando-lambertucci-98402a40/">LinkedIn</a> /{''}
         {''} <a className="hover:underline" href="https://github.com/avlambertucci">Github</a>
