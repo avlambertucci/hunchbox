@@ -6,11 +6,19 @@ const doc = new GoogleSpreadsheet(process.env.SHEET_DOC_ID)
 
 export default async (req, res)=>{
 
-  try{
+  const fromBase64 = (value)=>{
+    const buff = Buffer.from(value, 'base64');
+    return buff.toString('ascii');
+  }
+  try{  
+
+
     await doc.useServiceAccountAuth({
       client_email: process.env.SHEET_CLIENT_EMAIL,
       private_key: fromBase64(process.env.SHEET_PRIVATE_KEY)
     })
+
+
     await doc.loadInfo()
     
     const data = (JSON.parse(req.body));
