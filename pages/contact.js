@@ -1,5 +1,5 @@
 import React from 'react';
-import PageTitle from '../components/Title'
+import PageTitle from '../components/PageTitle';
 
 
 function ContactPage() {
@@ -7,8 +7,6 @@ function ContactPage() {
     <>
     <PageTitle title="Contato" />
     <h1>Contact page!</h1>
-
-  
     </>
   );
 }

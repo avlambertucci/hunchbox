@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import PageTitle from '../components/Title'
+import PageTitle from '../components/PageTitle';
 
 
 export default function Search() {
@@ -33,7 +33,7 @@ export default function Search() {
         body: JSON.stringify(form)
       })
       const data = await response.json()
-      console.log(data)
+      
       setSuccess(true)
       setpayloadFromBack(data)
 
@@ -45,7 +45,7 @@ export default function Search() {
   }
   return (
     <div className="container mx-auto text-center py-8">
-    <PageTitle title="Pesquisa" />
+      <PageTitle title="Pesquisa" />
       <h1 className="font-bold text-3xl">Sugestões</h1>
       <p className="max-w-sm mt-4 mx-auto"> Dê seu palpite aqui</p>
       <p className="max-w-sm mx-auto">Contribuindo voce ganha um cupom de desconto 💰 para usar no nosso restaurante 🍕!</p>
@@ -75,6 +75,7 @@ export default function Search() {
           <label className="flex flex-start" htmlFor="">Sugestão:</label>
           <input type="text" className="p-4 block shadow bg-gray-100 my-2 rounded"/>
           <button className=" shadow-lg rounded py-3 my-6 bg-blue-400 hover:bg-blue-500 duration-300" onClick={save}>Salvar</button>
+          <span>Nota:</span>
           
         </div>
         <div className="flex flex-row justify-center">
