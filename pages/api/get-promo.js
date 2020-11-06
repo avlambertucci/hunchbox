@@ -8,7 +8,10 @@ const doc = new GoogleSpreadsheet(process.env.SHEET_DOC_ID)
    return buff.toString('ascii');
  }
  export default async (req, res)=>{
+ 
   console.log(fromBase64(process.env.SHEET_PRIVATE_KEY))
+  
+ 
   try{
     await doc.useServiceAccountAuth({
       client_email: process.env.SHEET_CLIENT_EMAIL,

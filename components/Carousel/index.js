@@ -9,7 +9,7 @@ const CarouselComp = ()=> {
   //Get Carousel Info from google SHEET 
   return (
     
-    <Carousel className="max-w-3xl shadow-lg">
+    <Carousel className="max-w-xl shadow-lg flex-shrink">
       <div >
           <img src="img2.jpg" />
           <p className="legend">Ambiente super aconchegante, climatizado com atendimento eletronico e com decoraçao arrojada, </p>
